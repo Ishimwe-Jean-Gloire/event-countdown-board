@@ -12,7 +12,7 @@ const { readEvents } = require("./utils/jsonDb");
 const app = express();
 
 app.use(session({
-  secret:"9269ec5adaac95451sssqa76777d73a0f7916a611eb3ac4f2e02592a66499dc0ec26",
+  secret:process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
