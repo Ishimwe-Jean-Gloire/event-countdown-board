@@ -1,6 +1,6 @@
-# 🗓️ Event Countdown Board (MongoDB Version)
+# 🗓️ Event Countdown Board
 
-A beautifully designed Node.js + Express.js web application that allows users to **create, view, edit, and delete events**, with each event displaying a live **countdown timer**. This version uses **MongoDB Atlas** for data storage and incorporates **Bootstrap 5** for responsive design.
+A beautifully designed Node.js + Express.js web application that allows users to **create, view, edit, and delete events**, with each event displaying a live **countdown timer** and event sorted by **Soonest One**. This version uses **MongoDB Atlas** for data storage and incorporates **Bootstrap 5** for responsive design.
 
 
 ⚙️ It supports two modes of data storage:
@@ -11,17 +11,15 @@ A beautifully designed Node.js + Express.js web application that allows users to
 
 By default, the project uses a local `data/events.json` file to store event data. This is ideal for quick setup.
 
-If you prefer MongoDB:
-
-- Create a MongoDB Atlas cluster or use a local MongoDB instance.
-- Update your `.env` file or MongoDB URI in `server.js` accordingly.
-- Make sure to uncomment or switch to MongoDB-related code in `event.js` and `routes/event.js`.
 
 ## 📸 Screenshots
-
+ --Home Page
 ![Home Page](images/home.PNG)
+-- Add Event
 ![Add Event](images/add-event.PNG)
+-- Event Created
 ![Event Created](images/event-created.PNG)
+-- Event Deleted
 ![Event Deleted](images/event-deleted.PNG)
 
 ---
@@ -32,6 +30,7 @@ If you prefer MongoDB:
 - Display all events on the homepage in styled Bootstrap cards
 - Edit or delete existing events
 - Countdown timer for each event
+- Event are sorted by Soonest One
 - Flash messages for user actions (e.g. success, delete)
 - Fully responsive design with Bootstrap 5
 
@@ -105,7 +104,7 @@ npm run devStart
 
 **Jean Gloire Ishimwe**  
 _Full Stack Developer & Aspiring UI/UX Designer_  
-🔗 _LinkedIn, GitHub, etc._
+🔗 [LinkedIn](https://www.linkedin.com/in/ishimwe-jean-gloire-129384260/) || [GitHub](https://github.com/Ishimwe-Jean-Gloire)
 
 ---
 
