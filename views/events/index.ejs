@@ -22,14 +22,14 @@
 </head>
 <body>
   <% if (success_msg) { %>
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" id="flash-message" role="alert">
     <%= success_msg %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% } %>
 
 <% if (error_msg) { %>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div class="alert alert-danger alert-dismissible fade show" id="flash-message" role="alert">
     <%= error_msg %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
@@ -95,7 +95,16 @@
   const countdowns = document.querySelectorAll('.countdown');
   countdowns.forEach(element => {
     setInterval(() => updateCountdown(element), 1000);
-    updateCountdown(element); // initial call
+    updateCountdown(element); 
+
+
+  setTimeout(function () {
+    const alert = document.getElementById('flash-message');
+    if (alert) {
+      alert.classList.remove('show'); 
+      setTimeout(() => alert.remove(), 300); 
+    }
+  }, 3000); 
   });
 </script>
 
