@@ -1,6 +1,6 @@
 const express = require("express");
-const flash = require('connect-flash');
 const session = require('express-session');
+const flash = require('connect-flash');
 require("dotenv").config();
 const eventRouter = require("./routes/event");
 const methodOverride = require("method-override");

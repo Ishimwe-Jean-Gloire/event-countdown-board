@@ -17,23 +17,28 @@
     font-family: monospace;
     font-size: 1.25rem;
   }
+    .hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
 </style>
 
 </head>
 <body>
-  <% if (success_msg) { %>
-  <div class="alert alert-success alert-dismissible fade show" id="flash-message" role="alert">
+ <% if (success_msg && success_msg.length > 0) { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-message">
     <%= success_msg %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% } %>
 
-<% if (error_msg) { %>
+
+<!-- <% if (error_msg) { %>
   <div class="alert alert-danger alert-dismissible fade show" id="flash-message" role="alert">
     <%= error_msg %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<% } %>
+<% } %> -->
 
   <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -96,16 +101,24 @@
   countdowns.forEach(element => {
     setInterval(() => updateCountdown(element), 1000);
     updateCountdown(element); 
+  });
 
-
-  setTimeout(function () {
+   document.addEventListener('DOMContentLoaded', () => {
     const alert = document.getElementById('flash-message');
     if (alert) {
-      alert.classList.remove('show'); 
-      setTimeout(() => alert.remove(), 300); 
+      setTimeout(() => {
+        // Fade out the alert after 3 seconds
+        alert.classList.remove('show');
+        alert.classList.add('hide');
+
+        // Remove the alert from the DOM after animation
+        setTimeout(() => {
+          alert.remove();
+        }, 500); // enough time for fade transition
+      }, 3000);
     }
-  }, 3000); 
   });
+ 
 </script>
 
 </body>
