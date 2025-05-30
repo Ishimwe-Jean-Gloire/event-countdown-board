@@ -76,9 +76,17 @@ cd event-countdown-board
 
 2. **Install dependencies:**
 
+--- **for json database | Quick Setup**---
+
 ```bash
 npm install
 ```
+
+```bash
+npm run devStart
+```
+ 
+ ---**for mongoDB Atlas**---
 
 3. **Set up your MongoDB Atlas URI:**
 
