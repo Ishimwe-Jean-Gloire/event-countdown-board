@@ -2,9 +2,27 @@
 
 A beautifully designed Node.js + Express.js web application that allows users to **create, view, edit, and delete events**, with each event displaying a live **countdown timer**. This version uses **MongoDB Atlas** for data storage and incorporates **Bootstrap 5** for responsive design.
 
+
+⚙️ It supports two modes of data storage:
+- **JSON file-based storage**
+- **MongoDB** 
+
+## 3. Choose your Data Storage Option
+
+By default, the project uses a local `data/events.json` file to store event data. This is ideal for quick setup.
+
+If you prefer MongoDB:
+
+- Create a MongoDB Atlas cluster or use a local MongoDB instance.
+- Update your `.env` file or MongoDB URI in `server.js` accordingly.
+- Make sure to uncomment or switch to MongoDB-related code in `event.js` and `routes/event.js`.
+
 ## 📸 Screenshots
 
 ![Home Page](images/home.PNG)
+![Add Event](images/add-event.PNG)
+![Event Created](images/event-created.PNG)
+![Event Deleted](images/event-deleted.PNG)
 
 ---
 
@@ -12,13 +30,16 @@ A beautifully designed Node.js + Express.js web application that allows users to
 
 - Create new events with a title, description, and date
 - Display all events on the homepage in styled Bootstrap cards
-- View individual event details
 - Edit or delete existing events
 - Countdown timer for each event
 - Flash messages for user actions (e.g. success, delete)
 - Fully responsive design with Bootstrap 5
 
 ---
+
+-- When event time reached countdown state change to Event Started
+
+## ![Event Started](images/event-started.PNG)
 
 ## 🛠️ Technologies Used
 
@@ -39,7 +60,7 @@ A beautifully designed Node.js + Express.js web application that allows users to
 
 Ensure the following are installed:
 
-- [Node.js](https://nodejs.org/) (v18.x or later recommended)
+- [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [MongoDB Atlas Account](https://www.mongodb.com/cloud/atlas/register)
 
@@ -50,7 +71,7 @@ Ensure the following are installed:
 1. **Clone this repository:**
 
 ```bash
-git clone https://github.com/your-username/event-countdown-board.git
+git clone https://github.com/Ishimwe-Jean-Gloire/event-countdown-board.git
 cd event-countdown-board
 ```
 
@@ -72,7 +93,7 @@ SESSION_SECRET=your_secure_session_secret
 4. **Run the application:**
 
 ```bash
-npm start
+npm run devStart
 ```
 
 5. Open your browser and visit:  
@@ -80,97 +101,10 @@ npm start
 
 ---
 
-## 🧾 Project Structure
-
-```
-event-countdown-board/
-│
-├── models/
-│   └── event.js               # Mongoose schema for Event
-│
-├── routes/
-│   └── event.js               # Express routes for CRUD operations
-│
-├── views/
-│   ├── events/
-│   │   ├── index.ejs          # Home page
-│   │   ├── new.ejs            # Add new event form
-│   │   ├── edit.ejs           # Edit form
-│   │   └── show.ejs           # Individual event detail view
-│
-├── public/
-│   └── styles.css             # Custom CSS (optional)
-│
-├── .env                       # Environment variables
-├── server.js                 # Main server entry point
-└── README.md
-```
-
----
-
-## 💡 Flash Message Handling
-
-Flash messages are displayed after user actions and disappear automatically after 3 seconds. This is done using:
-
-```js
-req.flash("success_msg", "✅ Your event was created!");
-```
-
-And in the EJS view:
-
-```ejs
-<% if (success_msg) { %>
-  <div class="alert alert-success" id="flash-message">
-    <%= success_msg %>
-  </div>
-<% } %>
-```
-
-JavaScript automatically hides them:
-
-```js
-document.addEventListener("DOMContentLoaded", () => {
-  const alert = document.getElementById("flash-message");
-  if (alert) {
-    setTimeout(() => {
-      alert.classList.add("fade");
-      setTimeout(() => alert.remove(), 500);
-    }, 3000);
-  }
-});
-```
-
----
-
-## 🧪 Example Event Document (MongoDB)
-
-```json
-{
-  "_id": "6653a38c5a4e4c2f1bc8e9a1",
-  "title": "Conference 2025",
-  "description": "Annual Tech Conference",
-  "date": "2025-12-20T00:00:00.000Z",
-  "createdAt": "2025-05-28T14:22:00.000Z",
-  "__v": 0
-}
-```
-
----
-
-## 📦 To Do (Optional Improvements)
-
-- Add user authentication
-- Enable recurring events or reminders
-- Add event categories and filters
-- Allow image uploads for events
-- Calendar integration
-
----
-
 ## 🧑‍💻 Author
 
-**Glory Ishimwe**  
-_Computer Science Student & Aspiring Web Developer_  
+**Jean Gloire Ishimwe**  
+_Full Stack Developer & Aspiring UI/UX Designer_  
 🔗 _LinkedIn, GitHub, etc._
 
 ---

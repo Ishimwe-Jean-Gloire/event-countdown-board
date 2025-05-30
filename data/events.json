@@ -1,12 +1,5 @@
 [
   {
-    "id": "0792f366-e01f-4a68-b442-1d50c533d178",
-    "title": "Test Event",
-    "description": "Test Description",
-    "date": "2025-05-31",
-    "createdAt": "2025-05-30T08:01:19.982Z"
-  },
-  {
     "id": "d0a0e894-4e9b-49ac-9125-2e939237fd33",
     "title": "Birth Day",
     "description": "Birth day party",
@@ -19,5 +12,12 @@
     "description": "Graduation ceremony",
     "date": "2025-07-30",
     "createdAt": "2025-05-30T08:03:12.410Z"
+  },
+  {
+    "id": "ecf17785-fb25-43df-a4dd-df179c50b60f",
+    "title": "Movie Night",
+    "description": "movie night event",
+    "date": "2025-05-30",
+    "createdAt": "2025-05-30T08:15:06.777Z"
   }
 ]
