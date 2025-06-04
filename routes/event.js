@@ -48,6 +48,7 @@ router.put("/:id", (req, res) => {
     date: req.body.date,
   };
   writeEvents(events);
+  req.flash("success_msg", "Event Edited successfully!");
   res.redirect(`/events/${req.params.id}`);
 });
 

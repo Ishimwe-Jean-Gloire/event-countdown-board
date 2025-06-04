@@ -1,6 +1,5 @@
 //Models
 
-//const { default: mongoose } = require("mongoose");
 const mongoose = require("mongoose");
 
 const slugify = require("slugify");
